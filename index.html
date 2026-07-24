@@ -402,31 +402,67 @@
     box-shadow:none;
   }
 
+  /* ---------- etiqueta formal + regalos (misma página) ---------- */
+  .dress-gifts-page{ gap:8px; padding:26px 26px 92px; }
+  .dress-badge{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:8px 20px; border:1px solid var(--gold);
+    border-radius:30px;
+    font-family:'Cinzel', serif; font-size:10px; letter-spacing:3px;
+    color:var(--deep-rose); text-transform:uppercase;
+    background:rgba(255,255,255,.5);
+    flex-shrink:0;
+  }
+  .dress-grid{ display:flex; gap:12px; margin-top:2px; width:100%; max-width:300px; flex-shrink:0; }
+  .dress-card{
+    flex:1; display:flex; flex-direction:column; align-items:center;
+    padding:12px 8px 10px;
+    background:linear-gradient(160deg,#fffdfb,#fdf3f7);
+    border:1px solid var(--gold-light); border-radius:12px;
+    box-shadow:0 10px 20px -14px rgba(120,40,75,.6);
+  }
+  .dress-card img{ height:92px; width:auto; object-fit:contain; }
+  .dress-role{
+    margin-top:7px; font-family:'Cinzel', serif; font-size:11px; letter-spacing:1.5px;
+    color:var(--deep-rose); text-transform:uppercase; font-weight:600;
+  }
+  .dress-desc{
+    margin-top:2px; font-family:'Cormorant Garamond', serif; font-size:13px; color:var(--ink); text-align:center;
+  }
+  .dress-warning{
+    display:flex; align-items:center; gap:8px;
+    margin-top:4px; padding:9px 16px;
+    background:var(--blush); border:1px solid rgba(184,87,126,.35); border-radius:30px;
+    font-family:'Cormorant Garamond', serif; font-size:13px; color:var(--deep-rose);
+    max-width:290px; text-align:left; flex-shrink:0;
+  }
+  .dress-warning svg{ width:16px; height:16px; flex-shrink:0; }
+
   /* ---------- gifts ---------- */
   .gift-list{
-    display:flex; flex-direction:column; gap:10px; width:100%; max-width:290px;
-    margin-top:4px;
+    display:flex; flex-direction:column; gap:7px; width:100%; max-width:290px;
+    margin-top:2px;
   }
   .gift-card{
-    display:flex; align-items:center; gap:12px; text-align:left;
-    padding:11px 13px;
+    display:flex; align-items:center; gap:11px; text-align:left;
+    padding:8px 12px;
     background:linear-gradient(160deg,#fdf3f7,#f8e6ee);
     border:1px solid var(--gold-light);
     border-radius:8px;
   }
   .gift-card .gift-ico{
-    width:34px; height:34px; border-radius:50%; flex-shrink:0;
+    width:30px; height:30px; border-radius:50%; flex-shrink:0;
     background:radial-gradient(circle at 35% 30%, #f3cee0, var(--rose) 75%);
     display:flex; align-items:center; justify-content:center;
     color:var(--plum);
   }
-  .gift-card .gift-ico svg{ width:17px; height:17px; }
+  .gift-card .gift-ico svg{ width:15px; height:15px; }
   .gift-card h4{
-    margin:0 0 2px; font-family:'Cinzel', serif; font-size:10px; letter-spacing:1.5px;
+    margin:0 0 1px; font-family:'Cinzel', serif; font-size:9.5px; letter-spacing:1.5px;
     color:var(--deep-rose); text-transform:uppercase; font-weight:600;
   }
   .gift-card p{
-    margin:0; font-family:'Cormorant Garamond', serif; font-size:15px; color:var(--ink); line-height:1.35;
+    margin:0; font-family:'Cormorant Garamond', serif; font-size:13.5px; color:var(--ink); line-height:1.3;
   }
 
   /* nav */
@@ -582,14 +618,34 @@
         </div>
       </div>
 
-      <!-- Page 4 : regalos -->
+      <!-- Page 4 : etiqueta formal (arriba) y regalos (abajo) -->
       <div class="page">
-        <div class="page-frame">
-          <div class="eyebrow">Regalos</div>
-          <div class="script-md">El mejor regalo<br>es tu presencia</div>
-          <div class="body-text italic" style="font-size:16px; margin-top:-2px;">Pero si deseas obsequiarme algo, aquí algunas ideas:</div>
+        <div class="page-frame dress-gifts-page">
+          <div class="dress-badge reveal" style="--d:.15s">✦ Etiqueta Formal ✦</div>
 
-          <div class="gift-list">
+          <div class="dress-grid reveal" style="--d:.3s">
+            <div class="dress-card">
+              <img src="vestido.png" alt="Vestido largo de dama">
+              <div class="dress-role">Damas</div>
+              <div class="dress-desc">Vestido largo elegante</div>
+            </div>
+            <div class="dress-card">
+              <img src="traje.png" alt="Traje formal de caballero">
+              <div class="dress-role">Caballeros</div>
+              <div class="dress-desc">Traje formal</div>
+            </div>
+          </div>
+
+          <div class="dress-warning reveal" style="--d:.45s">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+            Se reserva el color rosa en todos los tonos
+          </div>
+
+          <svg class="divider reveal" style="--d:.6s; margin-top:4px;" viewBox="0 0 120 14"><path d="M0 7 H45" stroke="#c9a15b" stroke-width="1"/><circle cx="60" cy="7" r="4" fill="#e8a6c1" stroke="#c9a15b" stroke-width="1"/><path d="M75 7 H120" stroke="#c9a15b" stroke-width="1"/></svg>
+
+          <div class="eyebrow reveal" style="--d:.7s">Regalos</div>
+
+          <div class="gift-list reveal" style="--d:.85s">
             <div class="gift-card">
               <div class="gift-ico">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
@@ -657,7 +713,7 @@
             Llamar
           </a>
 
-          <div class="script-md" style="margin-top:20px; font-size:27px;">Y vivieron felices<br>para siempre...</div>
+          <div class="script-md" style="margin-top:20px; font-size:27px;">Y vivió felices<br>para siempre...</div>
           <div class="btn-gold outline" id="btnClose" style="margin-top:10px; cursor:pointer;">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h7a2 2 0 0 1 2 2v14a1.5 1.5 0 0 0-1.5-1.5H4z"/><path d="M20 4h-7a2 2 0 0 0-2 2v14a1.5 1.5 0 0 1 1.5-1.5H20z"/></svg>
             Cerrar el cuento
